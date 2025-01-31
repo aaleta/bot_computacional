@@ -13,7 +13,7 @@ TELEGRAM_CHAT_ID=your_chat_id
 MODE=DEVELOPMENT
 ```
 4. Populate the memes folder with images
-5. Run the bot with `python3 main.py`
+5. Run the bot with `python3 bot.py`
 
 ## Usage
 
