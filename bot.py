@@ -54,9 +54,10 @@ if __name__ == '__main__':
     bot = MemeBot(BOT_TOKEN, CHAT_ID)
 
     if not PRODUCTION:
-        bot.send_message('Bot started in testing mode')
+        bot.send_message('Meme bot started in testing mode')
         min_sleep, max_sleep = 1, 60
     else:
+        bot.send_message('Meme bot started')
         min_sleep, max_sleep = 1 * 24 * 3600, 4 * 24 * 3600
 
     while True:
@@ -64,5 +65,10 @@ if __name__ == '__main__':
         bot.send_message(f'The next meme will appear in {sleep_time} seconds')
 
         time.sleep(sleep_time)
+
+        bot.send_message('Meme incoming...')
+        for _ in reversed(range(3)):
+            bot.send_message(f'{_+1}!')
+            time.sleep(1)
 
         bot.send_photo(open(get_random_meme(), 'rb'))
